@@ -45,6 +45,20 @@ CREATE TABLE articles (
 
 CREATE INDEX article_index ON articles(language, category_id);
 
+CREATE TABLE resources (
+	id bigserial NOT NULL,
+	value character varying(256) NOT NULL,
+	type int NOT NULL,
+	year character varying(4),
+	PRIMARY KEY(id)
+);
+
+CREATE TABLE refs (
+	id bigserial NOT NULL,
+	article_id bigint REFERENCES articles(id),
+	resource_id bigint REFERENCES resources(id),
+	PRIMARY KEY(id)
+);
 
 -- INSERT DATA
 
@@ -86,6 +100,24 @@ INSERT INTO articles (
 ) VALUES (
 	'ABDULLOH IBN MAS''UD',
 	'To''liq ismi Abdulloh ibn Mas''ud ibn Rofiya ibn Habib al-Xuzaliy. Kunyasi - Abu Abdurahmon (590-653). Buyuk faqih va mujtahidlardan biri, Muhammad sollalohu alayhi vasallam xizmatlarida turgan zotlardan. Shu sababli Qur''oni karimni hammadan yaxshi o''rgangan, juda ko''p hadis eshitgan va yod bilgan.',
+	1,
+	1
+);
+
+INSERT INTO resources (
+	value,
+	type,
+	year
+) VALUES (
+	'http://islom.ziyouz.com',
+	1,
+	NULL
+);
+
+INSERT INTO refs (
+	article_id,
+	resource_id
+) VALUES (
 	1,
 	1
 );
