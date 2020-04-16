@@ -1,2 +1,2 @@
-# the-golder-islamic-encyclopedia
- The Golder Islamic Encyclopedia
+# the-golden-islamic-encyclopedia
+ The Golden Islamic Encyclopedia
