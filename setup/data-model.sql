@@ -62,4 +62,10 @@ INSERT INTO users (
 	TRUE
 );
 
-
+INSERT INTO languages (
+	code,
+	label
+) VALUES (
+	'uz_lat',
+	'O''zbekcha (Lotin)'
+);
