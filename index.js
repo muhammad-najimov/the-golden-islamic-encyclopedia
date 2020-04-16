@@ -5,6 +5,7 @@ const PORT = process.env.PORT || 4000
 const { ApolloServer, PubSub, } = require('apollo-server-express')
 
 const User = require('./src/modules/user/user.module')
+const Article = require('./src/modules/article/article.module')
 
 const app = express()
 app.use(cors())
@@ -13,6 +14,7 @@ app.use(cors())
 	const server = new ApolloServer({
 		modules: [
 			User,
+			Article,
 		],
 		context: () => {
 			return { pubSub: new PubSub(), }
