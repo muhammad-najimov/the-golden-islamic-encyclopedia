@@ -1,0 +1,12 @@
+{
+  "name": "the-golder-islamic-encyclopedia",
+  "version": "1.0.0",
+  "description": "The Golder Islamic Encyclopedia",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
