@@ -44,3 +44,22 @@ CREATE TABLE articles (
 );
 
 CREATE INDEX article_index ON articles(language, category_id);
+
+
+-- INSERT DATA
+
+INSERT INTO users (
+	username,
+	password,
+	first_name,
+	last_name,
+	gender
+) VALUES (
+	'muhammad',
+	crypt('muhammad', gen_salt('bf')),
+	'Muhammad',
+	'Najimov',
+	TRUE
+);
+
+
