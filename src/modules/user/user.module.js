@@ -1,7 +1,7 @@
 const { gql, } = require('apollo-server-express')
 
 const typeDefs = gql`
-	scalar Date!
+	scalar Date
 	input UserFilterInput {
 		score: String
 		gender: String
@@ -24,7 +24,7 @@ const typeDefs = gql`
 
 const resolvers = {
 	Query: {
-		users: asycn (global, { filter, }, context) => await [],
+		users: async (global, { filter, }, context) => await [],
 	},
 	Mutation: {},
 	User: {

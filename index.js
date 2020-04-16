@@ -4,7 +4,7 @@ const cors = require('cors')
 const PORT = process.env.PORT || 4000
 const { ApolloServer, PubSub, } = require('apollo-server-express')
 
-const User = require('./modules/user/user.module')
+const User = require('./src/modules/user/user.module')
 
 const app = express()
 app.use(cors())
