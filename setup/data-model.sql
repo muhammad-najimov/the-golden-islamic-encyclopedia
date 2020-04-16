@@ -69,3 +69,23 @@ INSERT INTO languages (
 	'uz_lat',
 	'O''zbekcha (Lotin)'
 );
+
+INSERT INTO categories (
+	name,
+	language
+) VALUES (
+	'sahoba',
+	1
+);
+
+INSERT INTO articles (
+	title,
+	content,
+	language,
+	category_id
+) VALUES (
+	'ABDULLOH IBN MAS''UD',
+	'To''liq ismi Abdulloh ibn Mas''ud ibn Rofiya ibn Habib al-Xuzaliy. Kunyasi - Abu Abdurahmon (590-653). Buyuk faqih va mujtahidlardan biri, Muhammad sollalohu alayhi vasallam xizmatlarida turgan zotlardan. Shu sababli Qur''oni karimni hammadan yaxshi o''rgangan, juda ko''p hadis eshitgan va yod bilgan.',
+	1,
+	1
+);
