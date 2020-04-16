@@ -1,5 +1,8 @@
 const { gql, } = require('apollo-server-express')
 
+const UserModel = require('./user.model')
+const userModel = new UserModel()
+
 const typeDefs = gql`
 	scalar Date
 	input UserFilterInput {
@@ -24,7 +27,7 @@ const typeDefs = gql`
 
 const resolvers = {
 	Query: {
-		users: async (global, { filter, }, context) => await [],
+		users: async (global, { filter, }, context) => await userModel.all({}),
 	},
 	Mutation: {},
 	User: {
