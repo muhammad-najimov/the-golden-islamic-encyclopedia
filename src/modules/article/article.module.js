@@ -17,6 +17,12 @@ const typeDefs = gql`
 		content: String!
 		views: Int!
 		created: Date!
+		references: [Reference!]!
+	}
+	type Reference {
+		type: String!
+		value: String!
+		year: Int
 	}
 `
 
@@ -25,12 +31,19 @@ const resolvers = {
 		articles: async (global, { filter, }, context) => await articleModel.all({}),
 	},
 	Mutation: {},
-	User: {
+	Article: {
 		id: async global => global.id,
 		title: async global => global.title,
 		content: async global => global.content,
 		views: async global => global.views,
 		created: async global => moment(global.created).fromNow(),
+		references: async global => await articleModel.references(global.id),
+	},
+	Reference: {
+		id: async global => global.id,
+		type: async global => global.type === 1 ? 'website' : 'book',
+		value: async global => global.value,
+		year: async global => global.year,
 	},
 }
 

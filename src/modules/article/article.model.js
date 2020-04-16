@@ -26,4 +26,25 @@ module.exports = class extends CoreModel {
 			throw new ApolloError(error)
 		}
 	}
+
+	async references(articleId) {
+		try {
+			const { data } = await this.query(
+				`
+					SELECT
+						res.value,
+						res.type,
+						res.year
+					FROM refs ref
+					JOIN resources res ON res.id = ref.resource_id
+					WHERE ref.article_id = $1
+				`,
+				articleId
+			)
+			return data
+		}
+		catch (error) {
+			throw new ApolloError(error)
+		}
+	}
 }
